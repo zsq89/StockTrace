@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import com.mycompany.stocktrace.* ?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.stocktrace.ViewController">
+   <children>
+      <BorderPane layoutX="284.0" layoutY="109.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <BorderPane prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <left>
+                  <HBox prefHeight="37.0" prefWidth="535.0" spacing="6.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="searchTermTextField" prefHeight="27.0" prefWidth="417.0" />
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleStockSearch" prefHeight="27.0" prefWidth="101.0" text="Search" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets bottom="6.0" />
+                     </padding>
+                  </HBox>
+               </left>
+               <right>
+                  <Label fx:id="statusLabel" prefHeight="30.0" prefWidth="162.0" text="Label" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets right="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </right>
+            </BorderPane>
+         </top>
+         <center>
+             <BorderPane prefHeight="353.0" prefWidth="429.0" BorderPane.alignment="CENTER">
+                 <center>
+                     <TableView fx:id="resultsTableView" prefHeight="553.0" prefWidth="706.0" BorderPane.alignment="CENTER">
+                         <placeholder>
+                             <Label text="" />
+                         </placeholder>
+                         <columns>
+                             <TableColumn prefWidth="239.0" text="Name">
+                                 <cellValueFactory>
+                                     <PropertyValueFactory property="name" />
+                                 </cellValueFactory>
+                             </TableColumn> 
+                             <TableColumn minWidth="0.0" prefWidth="431.0" text="Value">
+                                 <cellValueFactory>
+                                     <PropertyValueFactory property="value" />
+                                 </cellValueFactory>
+                             </TableColumn> 
+                         </columns>
+                  </TableView>
+               </center>
+               <right>
+                  <BorderPane prefHeight="553.0" prefWidth="219.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <VBox prefHeight="523.0" prefWidth="187.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="102.0" text="History">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="102.0" text="Fn2">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="67.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="102.0" text="Fn3">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="134.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="102.0" text="Fn4" />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="50.0" top="30.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </right>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </BorderPane>
+         </center>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>
