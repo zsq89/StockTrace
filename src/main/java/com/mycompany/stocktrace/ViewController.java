@@ -43,7 +43,7 @@ public class ViewController implements Initializable {
     
     public void handleStockSearch(ActionEvent e) throws IOException {
         String stockSymbol = searchTermTextField.getText();
-        Stock stock = YahooFinance.get(stockSymbol);
+        Stock stock = YahooFinance.get(stockSymbol, true);
         if (stock.getName() != null) {
             final ObservableList<StockData> items = FXCollections.observableArrayList(
                     new StockData("Symbol", stock.getSymbol()),
